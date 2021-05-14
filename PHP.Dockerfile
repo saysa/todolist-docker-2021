@@ -1,4 +1,4 @@
-FROM php:5.6-fpm as base
+FROM php:7.4-fpm as base
 
 ARG WORKFOLDER
 
