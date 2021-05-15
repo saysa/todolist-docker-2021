@@ -1,5 +1,6 @@
 {
     "name": "saro0h/to-do-list",
+    "description": "Todo List - Sf 3.1",
     "license": "proprietary",
     "type": "project",
     "autoload": {
