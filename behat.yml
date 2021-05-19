@@ -1,0 +1,13 @@
+default:
+  suites:
+    my_suite:
+      contexts:
+        - Behat\MinkExtension\Context\MinkContext
+      type: symfony_bundle
+      bundle: AppBundle
+  extensions:
+    Behat\Symfony2Extension: ~
+    Behat\MinkExtension:
+      sessions:
+        my_session:
+          symfony2: ~
