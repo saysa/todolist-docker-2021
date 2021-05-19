@@ -12,3 +12,6 @@ To start the project:
 - run `docker exec todolist_php-fpm composer clear-cache`
 - run `docker exec todolist_php-fpm composer dump-autoload --optimize --classmap-authoritative`
 - run `docker exec todolist_php-fpm rm -rf ./var/cache/*`
+
+To enter the container:
+- run `docker exec -it todolist_php-fpm bash`
