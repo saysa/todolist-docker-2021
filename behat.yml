@@ -3,6 +3,9 @@ default:
     my_suite:
       contexts:
         - Behat\MinkExtension\Context\MinkContext
+        - Tests\Behat\DoctrineContext:
+            container: '@service_container'
+            entityManager: '@doctrine.orm.entity_manager'
       type: symfony_bundle
       bundle: AppBundle
   extensions:
