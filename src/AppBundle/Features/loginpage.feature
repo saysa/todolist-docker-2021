@@ -37,3 +37,11 @@ Feature: Loginpage
     And I press "Se connecter"
     Then I should be on "/login"
     And I should see "Invalid credentials."
+
+  Scenario: Login success
+    Given I am on "/login"
+    When I fill in "admin" for "_username"
+    And I fill in "pass_1234" for "_password"
+    And I press "Se connecter"
+    Then I should be on "/"
+    And I should see "Bienvenue sur Todo List"
