@@ -38,10 +38,13 @@ Feature: Loginpage
     Then I should be on "/login"
     And I should see "Invalid credentials."
 
-  Scenario: Login success
+  Scenario: Login success and logout
     Given I am on "/login"
     When I fill in "admin" for "_username"
     And I fill in "pass_1234" for "_password"
     And I press "Se connecter"
     Then I should be on "/"
     And I should see "Bienvenue sur Todo List"
+    Given I am on "/"
+    When I follow "Se déconnecter"
+    Then I should be on "/login"
