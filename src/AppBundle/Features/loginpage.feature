@@ -29,3 +29,11 @@ Feature: Loginpage
     And I press "Se connecter"
     Then I should be on "/login"
     And I should see "Invalid credentials."
+
+  Scenario: Invalid credentials
+    Given I am on "/login"
+    When I fill in "whatever" for "_username"
+    And I fill in "whatever" for "_password"
+    And I press "Se connecter"
+    Then I should be on "/login"
+    And I should see "Invalid credentials."
