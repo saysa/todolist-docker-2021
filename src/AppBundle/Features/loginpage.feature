@@ -21,3 +21,11 @@ Feature: Loginpage
     And I press "Se connecter"
     Then I should be on "/login"
     And I should see "Invalid credentials."
+
+  Scenario: Username is empty, Password not
+    Given I am on "/login"
+    When I fill in "" for "_username"
+    And I fill in "whatever" for "_password"
+    And I press "Se connecter"
+    Then I should be on "/login"
+    And I should see "Invalid credentials."
