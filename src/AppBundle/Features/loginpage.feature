@@ -5,3 +5,11 @@ Feature: Loginpage
     Then I should see "Nom d'utilisateur"
     And I should see "Mot de passe"
     And the response status code should be 200
+
+  Scenario: Username and Password are empty
+    Given I am on "/login"
+    When I fill in "" for "_username"
+    And I fill in "" for "_password"
+    And I press "Se connecter"
+    Then I should be on "/login"
+    And I should see "Invalid credentials."
