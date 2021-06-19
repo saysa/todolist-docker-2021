@@ -21,3 +21,12 @@ Feature: Edit user
     And I press "Modifier"
     Then I should be on "/users"
     And I should see "Superbe ! L'utilisateur a bien été modifié"
+
+  Scenario: Edit the email address
+    Given I am on "/users/1/edit"
+    And I fill in "something" for "user[password][first]"
+    And I fill in "something" for "user[password][second]"
+    And I fill in "new@email.com" for "user[email]"
+    And I press "Modifier"
+    Then I should be on "/users"
+    And I should see "Superbe ! L'utilisateur a bien été modifié"
