@@ -1,6 +1,6 @@
 Feature: Toggle a task
 
-  Scenario: A not logged in user can not toggle a task
+  Background: Create a task
     Given I am on "/login"
     When I fill in "admin" for "_username"
     And I fill in "pass_1234" for "_password"
@@ -13,8 +13,15 @@ Feature: Toggle a task
     And I press "Ajouter"
     Then I should be on "/tasks"
     And I should see "Superbe ! La tâche a été bien été ajoutée."
+
+  Scenario: A not logged in user can not toggle a task
     Given I follow "Se déconnecter"
     Then I should be on "/login"
     Given I am on "/tasks/1/toggle"
     Then I should be on "/login"
+
+  Scenario: A logged in user can toggle a task
+    Given I am on "/tasks/1/toggle"
+    Then I should be on "/tasks"
+    And I should see "Superbe ! La tâche a new task a bien été marquée comme faite."
 
